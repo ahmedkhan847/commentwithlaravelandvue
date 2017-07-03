@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('comments/{pageId}', 'CommentController@index');
+Route::post('comments', 'CommentController@store');
+Route::post('comments/{commentId}/{type}', 'CommentController@update');
