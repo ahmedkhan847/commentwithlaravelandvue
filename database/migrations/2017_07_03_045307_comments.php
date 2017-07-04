@@ -19,7 +19,7 @@ class Comments extends Migration
             $table->integer('votes')->default(0);
             $table->integer('spam')->default(0);
             $table->integer('reply_id')->default(0);
-            $table->string('page_id');
+            $table->string('page_id')->default(0);
             $table->integer('users_id');
             $table->timestamps();
         });

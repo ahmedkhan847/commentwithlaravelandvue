@@ -18957,62 +18957,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 var _ = __webpack_require__(7);
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -19026,11 +18970,6 @@ var _ = __webpack_require__(7);
         }, _defineProperty(_ref, 'comments', 0), _defineProperty(_ref, 'commentBoxs', []), _defineProperty(_ref, 'message', null), _defineProperty(_ref, 'replyCommentBoxs', []), _defineProperty(_ref, 'commentsData', []), _defineProperty(_ref, 'viewcomment', []), _defineProperty(_ref, 'show', []), _defineProperty(_ref, 'spamCommentsReply', []), _defineProperty(_ref, 'spamComments', []), _defineProperty(_ref, 'errorComment', null), _defineProperty(_ref, 'errorReply', null), _defineProperty(_ref, 'user', window.user), _ref;
     },
 
-    computed: {
-        /*commentsData(){
-          return _.orderBy(this.commentData,'votes','asc');
-        }*/
-    },
     http: {
         headers: {
             'X-CSRF-TOKEN': window.csrf
@@ -19044,10 +18983,8 @@ var _ = __webpack_require__(7);
 
                 _this.commentData = res.data;
                 _this.commentsData = _.orderBy(res.data, ['votes'], ['desc']);
-                console.log(_this.commentsData);
-                //this.commentsData.sortBy('votes' => asc);
                 _this.comments = 1;
-                console.log(_this.commentData[0].replies.length);
+                console.log(_this.commentData[0].replies[0]);
             });
         },
         showComments: function showComments(index) {
@@ -19105,7 +19042,8 @@ var _ = __webpack_require__(7);
                 this.$http.post('comments', {
                     comment: this.message,
                     users_id: this.user.id,
-                    reply_id: commentId
+                    reply_id: commentId,
+                    page_id: this.commentUrl
                 }).then(function (res) {
 
                     if (res.data.status) {
@@ -19173,6 +19111,7 @@ var _ = __webpack_require__(7);
         }
     },
     mounted: function mounted() {
+        console.log("mounted");
         this.fetchComments();
     }
 });
@@ -32257,9 +32196,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.saveComment
     }
-  })])])]), _vm._v(" "), _vm._l((_vm.commentsData), function(index, comment) {
+  })])])]), _vm._v(" "), _vm._l((_vm.commentsData), function(comment, key, index) {
     return (_vm.comments) ? _c('div', {
-      key: index,
       staticClass: "comments"
     }, [(!_vm.spamComments[index] || !comment.spam) ? _c('div', {
       staticClass: "comment"
@@ -32267,19 +32205,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "comment-box"
     }, [_c('div', {
       staticClass: "comment-text"
-    }, [_vm._v(_vm._s(comment.comment))]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(comment.comment) + " and " + _vm._s(comment.replies.length))]), _vm._v(" "), _c('div', {
       staticClass: "comment-footer"
     }, [_c('div', {
       staticClass: "comment-info"
     }, [_c('span', {
       staticClass: "comment-author"
-    }, [_c('em', [_vm._v(_vm._s(comment.name) + " " + _vm._s(comment.reply))])]), _vm._v(" "), _c('span', {
+    }, [_c('em', [_vm._v(_vm._s(comment.name))])]), _vm._v(" "), _c('span', {
       staticClass: "comment-date"
     }, [_vm._v("10-5-6")])]), _vm._v(" "), _c('div', {
       staticClass: "comment-actions"
     }, [_c('ul', {
       staticClass: "list"
-    }, [_c('li', [_vm._v("Votes: " + _vm._s(comment.votes) + "\n                                "), (!comment.votedByUser) ? _c('a', {
+    }, [_c('li', [_vm._v("Votes: " + _vm._s(comment.votes) + "\r\n                                "), (!comment.votedByUser) ? _c('a', {
       on: {
         "click": function($event) {
           _vm.voteComment(comment.commentid, 'directcomment', index, 0, 'up')
@@ -32361,7 +32299,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.replyComment(comment.commentid, index)
         }
       }
-    })])])]) : _vm._e(), _vm._v(" "), (comment.replies.length > 1) ? _c('div', {
+    })])])]) : _vm._e(), _vm._v(" "), (comment.replies && comment.replies.length > 1) ? _c('div', {
       staticClass: "form-row reply"
     }, [(_vm.viewcomment[index]) ? _c('a', {
       on: {
@@ -32375,9 +32313,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.showComments(index)
         }
       }
-    }, [_vm._v("View more " + _vm._s(comment.replies.length - 1) + " comments ")])]) : _vm._e(), _vm._v(" "), (_vm.viewcomment[index]) ? _c('div', _vm._l((comment.replies), function(index2, replies) {
-      return (_vm.comments) ? _c('div', {
-        key: index2,
+    }, [_vm._v("View more " + _vm._s(comment.replies.length - 1) + " comments ")])]) : _vm._e(), _vm._v(" "), _vm._l((comment.replies), function(replies, key2, index2) {
+      return (comment.replies) ? _c('div', {
         staticClass: "comments"
       }, [(!_vm.spamCommentsReply[index2] || !replies.spam) ? _c('div', {
         staticClass: "comment reply"
@@ -32391,13 +32328,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "comment-info"
       }, [_c('span', {
         staticClass: "comment-author"
-      }, [_vm._v("\n                                        " + _vm._s(replies.name) + "\n                                    ")]), _vm._v(" "), _c('span', {
+      }, [_vm._v("\r\n                                            " + _vm._s(replies.name) + "\r\n                                        ")]), _vm._v(" "), _c('span', {
         staticClass: "comment-date"
       }, [_vm._v("Feb 2, 2013 11:32:04 PM")])]), _vm._v(" "), _c('div', {
         staticClass: "comment-actions"
       }, [_c('ul', {
         staticClass: "list"
-      }, [_c('li', [_vm._v("Total votes: " + _vm._s(replies.votes) + "\n                                            "), (!replies.votedByUser) ? _c('a', {
+      }, [_c('li', [_vm._v("Total votes: " + _vm._s(replies.votes) + "\r\n                                            "), (!replies.votedByUser) ? _c('a', {
         on: {
           "click": function($event) {
             _vm.voteComment(replies.commentid, 'replycomment', index, index2, 'up')
@@ -32423,13 +32360,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }, [_vm._v("Reply")])])])])])]), _vm._v(" "), (_vm.replyCommentBoxs[index2]) ? _c('div', {
         staticClass: "comment-form reply"
-      }, [_c('div', {
-        staticClass: "comment-avatar"
-      }, [_c('img', {
-        attrs: {
-          "src": _vm.user.photo_url
-        }
-      })]), _vm._v(" "), _c('form', {
+      }, [_vm._m(4, true), _vm._v(" "), _c('form', {
         staticClass: "form",
         attrs: {
           "name": "form"
@@ -32486,118 +32417,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           }
         }
       })])])]) : _vm._e()]) : _vm._e()]) : _vm._e()
-    })) : _vm._e()]) : _vm._e(), _vm._v(" "), (comment.reply == 1 && !_vm.viewcomment[index]) ? _c('div', {
-      staticClass: "comment reply",
-      attrs: {
-        "&&": "",
-        "!spamComments[index]": ""
-      }
-    }, [_c('div', {
-      staticClass: "comment-avatar"
-    }, [_c('img', {
-      attrs: {
-        "src": _vm.replies.photo_url
-      }
-    })]), _vm._v(" "), _c('div', {
-      staticClass: "comment-box"
-    }, [_c('div', {
-      staticClass: "comment-text"
-    }, [_vm._v(_vm._s(comment.replies[comment.replies.length - 1].comment))]), _vm._v(" "), _c('div', {
-      staticClass: "comment-footer"
-    }, [_c('div', {
-      staticClass: "comment-info"
-    }, [_c('span', {
-      staticClass: "comment-author"
-    }, [_vm._v("\n                            " + _vm._s(_vm.replies.name) + "\n                        ")]), _vm._v(" "), _c('span', {
-      staticClass: "comment-date"
-    }, [_vm._v("Feb 2, 2013 11:32:04 PM")])]), _vm._v(" "), _c('div', {
-      staticClass: "comment-actions"
-    }, [_c('ul', {
-      staticClass: "list"
-    }, [_c('li', [_vm._v("Total votes: " + _vm._s(comment.replies[comment.replies.length - 1].votes) + "\n                                "), (!comment.replies[comment.replies.length - 1].votedByUser) ? _c('a', {
-      on: {
-        "click": function($event) {
-          _vm.voteComment(comment.replies[comment.replies.length - 1].commentid, 'replycomment', index, comment.replies.length - 1, 'up')
-        }
-      }
-    }, [_vm._v("Up Votes")]) : _vm._e(), _vm._v(" "), (!comment.replies[comment.replies.length - 1].votedByUser) ? _c('a', {
-      on: {
-        "click": function($event) {
-          _vm.voteComment(comment.replies[comment.replies.length - 1].commentid, 'replycomment', index, comment.replies.length - 1, 'down')
-        }
-      }
-    }, [_vm._v("Down Votes")]) : _vm._e()]), _vm._v(" "), _c('li', [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.spamComment(comment.replies[comment.replies.length - 1].commentid, 'replycomment', index, _vm.index2)
-        }
-      }
-    }, [_vm._v("Spam")])]), _vm._v(" "), _c('li', [_c('a', {
-      on: {
-        "click": function($event) {
-          _vm.replyCommentBox(comment.replies.length - 1)
-        }
-      }
-    }, [_vm._v("Reply")])])])])])]), _vm._v(" "), (_vm.user) ? _c('div', {
-      staticClass: "comment-form reply"
-    }, [_c('div', {
-      staticClass: "comment-avatar"
-    }, [_c('img', {
-      attrs: {
-        "src": _vm.user.photo_url
-      }
-    })]), _vm._v(" "), _c('form', {
-      staticClass: "form",
-      attrs: {
-        "name": "form"
-      }
-    }, [_c('div', {
-      staticClass: "form-row"
-    }, [_c('textarea', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (_vm.message),
-        expression: "message"
-      }],
-      staticClass: "input",
-      attrs: {
-        "placeholder": "Add comment...",
-        "required": ""
-      },
-      domProps: {
-        "value": (_vm.message)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          _vm.message = $event.target.value
-        }
-      }
-    })]), _vm._v(" "), _c('div', {
-      staticClass: "form-row"
-    }, [_c('input', {
-      staticClass: "input",
-      attrs: {
-        "placeholder": "Email",
-        "type": "text"
-      },
-      domProps: {
-        "value": _vm.user.name
-      }
-    })]), _vm._v(" "), _c('div', {
-      staticClass: "form-row"
-    }, [_c('input', {
-      attrs: {
-        "type": "button",
-        "value": "Add Comment"
-      },
-      on: {
-        "click": function($event) {
-          _vm.replyComment(comment.commentid, index)
-        }
-      }
-    })])])]) : _vm._e()]) : _vm._e()]) : _vm._e()
+    })], 2) : _vm._e()]) : _vm._e()
   })], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
@@ -32605,6 +32425,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('img', {
     attrs: {
       "src": "storage/commentbox.png"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "comment-avatar"
+  }, [_c('img', {
+    attrs: {
+      "src": "storage/comment.png"
     }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
