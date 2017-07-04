@@ -19038,8 +19038,7 @@ var _ = __webpack_require__(7);
                 this.$http.post('comments', {
                     comment: this.message,
                     users_id: this.user.id,
-                    reply_id: commentId,
-                    page_id: this.commentUrl
+                    reply_id: commentId
                 }).then(function (res) {
 
                     if (res.data.status) {
@@ -32202,7 +32201,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "comment-box"
     }, [_c('div', {
       staticClass: "comment-text"
-    }, [_vm._v(_vm._s(comment.comment) + " and " + _vm._s(index))]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(comment.comment))]), _vm._v(" "), _c('div', {
       staticClass: "comment-footer"
     }, [_c('div', {
       staticClass: "comment-info"

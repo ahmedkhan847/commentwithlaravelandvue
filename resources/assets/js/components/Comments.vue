@@ -35,7 +35,7 @@
 
             <!-- Comment Box -->
             <div class="comment-box">
-                <div class="comment-text">{{comment.comment}} and {{index}}</div>
+                <div class="comment-text">{{comment.comment}}</div>
                 <div class="comment-footer">
                     <div class="comment-info">
                         <span class="comment-author">
@@ -244,8 +244,7 @@ export default {
                 this.$http.post('comments', {
                     comment: this.message,
                     users_id: this.user.id,
-                    reply_id: commentId,
-                    page_id: this.commentUrl
+                    reply_id: commentId
                 }).then(res => {
 
                     if (res.data.status) {
