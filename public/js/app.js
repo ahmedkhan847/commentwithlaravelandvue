@@ -18953,10 +18953,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 var _ = __webpack_require__(7);
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -32196,7 +32192,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.saveComment
     }
-  })])])]), _vm._v(" "), _vm._l((_vm.commentsData), function(comment, key, index) {
+  })])])]), _vm._v(" "), _vm._l((_vm.commentsData), function(comment, index) {
     return (_vm.comments) ? _c('div', {
       staticClass: "comments"
     }, [(!_vm.spamComments[index] || !comment.spam) ? _c('div', {
@@ -32205,7 +32201,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "comment-box"
     }, [_c('div', {
       staticClass: "comment-text"
-    }, [_vm._v(_vm._s(comment.comment) + " and " + _vm._s(comment.replies.length))]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(comment.comment) + " and " + _vm._s(index))]), _vm._v(" "), _c('div', {
       staticClass: "comment-footer"
     }, [_c('div', {
       staticClass: "comment-info"
@@ -32299,21 +32295,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.replyComment(comment.commentid, index)
         }
       }
-    })])])]) : _vm._e(), _vm._v(" "), (comment.replies && comment.replies.length > 1) ? _c('div', {
-      staticClass: "form-row reply"
-    }, [(_vm.viewcomment[index]) ? _c('a', {
-      on: {
-        "click": function($event) {
-          _vm.showComments(index)
-        }
-      }
-    }, [_vm._v("Hide comments " + _vm._s(comment.replies.length - 1))]) : _c('a', {
-      on: {
-        "click": function($event) {
-          _vm.showComments(index)
-        }
-      }
-    }, [_vm._v("View more " + _vm._s(comment.replies.length - 1) + " comments ")])]) : _vm._e(), _vm._v(" "), _vm._l((comment.replies), function(replies, key2, index2) {
+    })])])]) : _vm._e(), _vm._v(" "), _vm._l((comment.replies), function(replies, index2) {
       return (comment.replies) ? _c('div', {
         staticClass: "comments"
       }, [(!_vm.spamCommentsReply[index2] || !replies.spam) ? _c('div', {

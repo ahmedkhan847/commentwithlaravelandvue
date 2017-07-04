@@ -25,7 +25,7 @@
         </form>
     </div>
     <!-- Comments List -->
-    <div class="comments" v-if="comments" v-for="(comment,key,index) in commentsData">
+    <div class="comments" v-if="comments" v-for="(comment,index) in commentsData">
         <!-- Comment -->
         <div v-if="!spamComments[index] || !comment.spam" class="comment">
             <!-- Comment Avatar -->
@@ -35,7 +35,7 @@
 
             <!-- Comment Box -->
             <div class="comment-box">
-                <div class="comment-text">{{comment.comment}} and {{comment.replies.length}}</div>
+                <div class="comment-text">{{comment.comment}} and {{index}}</div>
                 <div class="comment-footer">
                     <div class="comment-info">
                         <span class="comment-author">
@@ -82,13 +82,9 @@
                     </div>
                 </form>
             </div>
-            <div class="form-row reply" v-if="comment.replies && comment.replies.length > 1">
-                <a v-if="viewcomment[index]" @click="showComments(index)">Hide comments {{comment.replies.length - 1}}</a>
-                <a v-else @click="showComments(index)">View more {{comment.replies.length - 1}} comments </a>
-            </div>
             <!-- Comment - Reply -->
             <!--<div v-if="viewcomment[index]">-->
-                <div class="comments" v-if="comment.replies" v-for="(replies,key2,index2) in comment.replies">
+                <div class="comments" v-if="comment.replies" v-for="(replies,index2) in comment.replies">
                     <div v-if="!spamCommentsReply[index2] || !replies.spam" class="comment reply">
 
                         <!-- Comment Avatar -->
