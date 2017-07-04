@@ -32287,6 +32287,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })]), _vm._v(" "), _c('div', {
       staticClass: "form-row"
     }, [_c('input', {
+      staticClass: "btn btn-success",
       attrs: {
         "type": "button",
         "value": "Add Comment"
@@ -32396,6 +32397,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       })]), _vm._v(" "), _c('div', {
         staticClass: "form-row"
       }, [_c('input', {
+        staticClass: "btn btn-success",
         attrs: {
           "type": "button",
           "value": "Add Comment"

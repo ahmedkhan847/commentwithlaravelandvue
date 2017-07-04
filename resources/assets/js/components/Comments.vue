@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="form-row">
-                        <input type="button" v-on:click="replyComment(comment.commentid,index)" value="Add Comment">
+                        <input type="button" class="btn btn-success" v-on:click="replyComment(comment.commentid,index)" value="Add Comment">
                     </div>
                 </form>
             </div>
@@ -138,7 +138,7 @@
                                 </div>
 
                                 <div class="form-row">
-                                    <input type="button" v-on:click="replyComment(comment.commentid,index)" value="Add Comment">
+                                    <input type="button" class="btn btn-success" v-on:click="replyComment(comment.commentid,index)" value="Add Comment">
                                 </div>
                             </form>
                         </div>
