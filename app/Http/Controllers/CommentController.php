@@ -75,7 +75,7 @@ class CommentController extends Controller
                     "vote" =>$voteStatus,
                     "spam" => $spam,
                     "replies" => $replies,
-                    "date" => $key->created_at->toDateString()
+                    "date" => $key->created_at->toDateTimeString()
                 ]);
             }    
             
@@ -123,7 +123,7 @@ class CommentController extends Controller
                     "votedByUser" => $vote,
                     "vote" => $voteStatus,
                     "spam" => $spam,
-                    "date" => $key->created_at->toDateString()
+                    "date" => $key->created_at->toDateTimeString()
                 ]);
             }
             
