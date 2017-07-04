@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-row">
-                <input type="button" @click="saveComment" value="Add Comment">
+                <input type="button" class="btn btn-success" @click="saveComment" value="Add Comment">
             </div>
         </form>
     </div>
