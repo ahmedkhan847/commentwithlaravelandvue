@@ -10,10 +10,16 @@
 
                 <div class="panel-body">
                     You are logged in!
-                    <comment comment-url="1234"></comment>
+                    
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <comment comment-url="1234"></comment>
+        </div>
+        
     </div>
 </div>
 @endsection
