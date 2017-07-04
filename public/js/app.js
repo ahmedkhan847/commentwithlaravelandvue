@@ -32177,7 +32177,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "input",
     attrs: {
       "placeholder": "Email",
-      "type": "text"
+      "type": "text",
+      "disabled": ""
     },
     domProps: {
       "value": _vm.user.name

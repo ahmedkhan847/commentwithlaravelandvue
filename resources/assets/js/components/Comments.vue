@@ -16,7 +16,7 @@
             </div>
 
             <div class="form-row">
-                <input class="input" placeholder="Email" type="text" :value="user.name">
+                <input class="input" placeholder="Email" type="text" disabled :value="user.name">
             </div>
 
             <div class="form-row">
