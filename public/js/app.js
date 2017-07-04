@@ -32209,7 +32209,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "comment-author"
     }, [_c('em', [_vm._v(_vm._s(comment.name))])]), _vm._v(" "), _c('span', {
       staticClass: "comment-date"
-    }, [_vm._v("10-5-6")])]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(comment.date))])]), _vm._v(" "), _c('div', {
       staticClass: "comment-actions"
     }, [_c('ul', {
       staticClass: "list"
@@ -32312,7 +32312,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "comment-author"
       }, [_vm._v("\r\n                                            " + _vm._s(replies.name) + "\r\n                                        ")]), _vm._v(" "), _c('span', {
         staticClass: "comment-date"
-      }, [_vm._v("Feb 2, 2013 11:32:04 PM")])]), _vm._v(" "), _c('div', {
+      }, [_vm._v(_vm._s(replies.date))])]), _vm._v(" "), _c('div', {
         staticClass: "comment-actions"
       }, [_c('ul', {
         staticClass: "list"

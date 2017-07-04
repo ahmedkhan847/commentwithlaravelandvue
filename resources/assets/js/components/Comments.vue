@@ -41,7 +41,7 @@
                         <span class="comment-author">
                                 <em>{{ comment.name}}</em>
                             </span>
-                        <span class="comment-date">10-5-6</span>
+                        <span class="comment-date">{{ comment.date}}</span>
                     </div>
 
                     <div class="comment-actions">
@@ -100,7 +100,7 @@
                                     <span class="comment-author">
                                             {{replies.name}}
                                         </span>
-                                    <span class="comment-date">Feb 2, 2013 11:32:04 PM</span>
+                                    <span class="comment-date">{{replies.date}}</span>
                                 </div>
 
                                 <div class="comment-actions">
