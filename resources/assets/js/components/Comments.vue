@@ -93,8 +93,8 @@
                         </div>
 
                         <!-- Comment Box -->
-                        <div class="comment-box">
-                            <div class="comment-text">{{replies.comment}}</div>
+                        <div class="comment-box" style="background: grey;">
+                            <div class="comment-text" style="color: white">{{replies.comment}}</div>
                             <div class="comment-footer">
                                 <div class="comment-info">
                                     <span class="comment-author">

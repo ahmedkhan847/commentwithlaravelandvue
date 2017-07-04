@@ -32301,9 +32301,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }, [(!_vm.spamCommentsReply[index2] || !replies.spam) ? _c('div', {
         staticClass: "comment reply"
       }, [_vm._m(3, true), _vm._v(" "), _c('div', {
-        staticClass: "comment-box"
+        staticClass: "comment-box",
+        staticStyle: {
+          "background": "grey"
+        }
       }, [_c('div', {
-        staticClass: "comment-text"
+        staticClass: "comment-text",
+        staticStyle: {
+          "color": "white"
+        }
       }, [_vm._v(_vm._s(replies.comment))]), _vm._v(" "), _c('div', {
         staticClass: "comment-footer"
       }, [_c('div', {
