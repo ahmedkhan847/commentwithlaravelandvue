@@ -1,6 +1,6 @@
 <template>
 <div class="comments-app">
-    <h1>Comments App - AngularJS</h1>
+    <h1>Comments</h1>
 
     <!-- From -->
     <div class="comment-form">
