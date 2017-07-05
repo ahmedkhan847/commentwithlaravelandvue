@@ -32297,8 +32297,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.replyComment(comment.commentid, index)
         }
       }
-    })])])]) : _vm._e(), _vm._v(" "), _vm._l((comment.replies), function(replies, index2) {
-      return (comment.replies) ? _c('div', {
+    })])])]) : _vm._e(), _vm._v(" "), (comment.replies) ? _c('div', _vm._l((comment.replies), function(replies, index2) {
+      return _c('div', {
         staticClass: "comments"
       }, [(!_vm.spamCommentsReply[index2] || !replies.spam) ? _c('div', {
         staticClass: "comment reply"
@@ -32407,8 +32407,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             _vm.replyComment(comment.commentid, index)
           }
         }
-      })])])]) : _vm._e()]) : _vm._e()]) : _vm._e()
-    })], 2) : _vm._e()]) : _vm._e()
+      })])])]) : _vm._e()]) : _vm._e()])
+    })) : _vm._e()]) : _vm._e()]) : _vm._e()
   })], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {

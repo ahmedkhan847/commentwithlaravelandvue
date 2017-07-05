@@ -83,8 +83,8 @@
                 </form>
             </div>
             <!-- Comment - Reply -->
-            <!--<div v-if="viewcomment[index]">-->
-                <div class="comments" v-if="comment.replies" v-for="(replies,index2) in comment.replies">
+            <div v-if="comment.replies">
+                <div class="comments" v-for="(replies,index2) in comment.replies">
                     <div v-if="!spamCommentsReply[index2] || !replies.spam" class="comment reply">
 
                         <!-- Comment Avatar -->
@@ -148,7 +148,7 @@
             </div>
         </div>
     </div>
-<!--</div>-->
+</div>
 
 </template>
 
