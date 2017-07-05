@@ -1,9 +1,8 @@
 <template>
 <div class="comments-app">
     <h1>Comments</h1>
-
     <!-- From -->
-    <div class="comment-form">
+    <div class="comment-form" v-if="user">
         <!-- Comment Avatar -->
         <div class="comment-avatar">
             <img src="storage/commentbox.png">
@@ -21,6 +20,20 @@
 
             <div class="form-row">
                 <input type="button" class="btn btn-success" @click="saveComment" value="Add Comment">
+            </div>
+        </form>
+    </div>
+    <div class="comment-form" v-else>
+        <!-- Comment Avatar -->
+        <div class="comment-avatar">
+            <img src="storage/commentbox.png">
+        </div>
+        <form class="form" name="form">
+            <div class="form-row">
+                <a href="login"><textarea
+                  class="input"
+                  placeholder="Add comment..."
+                  required></textarea></a>
             </div>
         </form>
     </div>

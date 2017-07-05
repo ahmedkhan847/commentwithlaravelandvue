@@ -18953,6 +18953,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var _ = __webpack_require__(7);
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -32134,7 +32147,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "comments-app"
-  }, [_c('h1', [_vm._v("Comments")]), _vm._v(" "), _c('div', {
+  }, [_c('h1', [_vm._v("Comments")]), _vm._v(" "), (_vm.user) ? _c('div', {
     staticClass: "comment-form"
   }, [_vm._m(0), _vm._v(" "), _c('form', {
     staticClass: "form",
@@ -32192,7 +32205,32 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.saveComment
     }
-  })])])]), _vm._v(" "), _vm._l((_vm.commentsData), function(comment, index) {
+  })])])]) : _c('div', {
+    staticClass: "comment-form"
+  }, [_c('div', {
+    staticClass: "comment-avatar"
+  }, [_c('img', {
+    attrs: {
+      "src": "storage/commentbox.png"
+    }
+  })]), _vm._v(" "), _c('form', {
+    staticClass: "form",
+    attrs: {
+      "name": "form"
+    }
+  }, [_c('div', {
+    staticClass: "form-row"
+  }, [_c('a', {
+    attrs: {
+      "href": "login"
+    }
+  }, [_c('textarea', {
+    staticClass: "input",
+    attrs: {
+      "placeholder": "Add comment...",
+      "required": ""
+    }
+  })])])])]), _vm._v(" "), _vm._l((_vm.commentsData), function(comment, index) {
     return (_vm.comments) ? _c('div', {
       staticClass: "comments"
     }, [(!_vm.spamComments[index] || !comment.spam) ? _c('div', {

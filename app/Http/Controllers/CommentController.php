@@ -12,20 +12,11 @@ use Auth;
 
 class CommentController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     
     /**
-     * Display a listing of the resource.
+     * Get Comments for pageId
      *
-     * @return \Illuminate\Http\Response
+     * @return Comments
      */
     public function index($pageId)
     {

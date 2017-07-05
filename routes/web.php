@@ -16,6 +16,9 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/{pageId}', function($pageId){
+    return view('page',['pageId'=>$pageId]);
+});
 Route::get('comments/{pageId}', 'CommentController@index');
 Route::post('comments', 'CommentController@store');
 Route::post('comments/{commentId}/{type}', 'CommentController@update');
