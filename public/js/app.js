@@ -18980,7 +18980,6 @@ var _ = __webpack_require__(7);
                 _this.commentData = res.data;
                 _this.commentsData = _.orderBy(res.data, ['votes'], ['desc']);
                 _this.comments = 1;
-                console.log(_this.commentData[0].replies[0]);
             });
         },
         showComments: function showComments(index) {

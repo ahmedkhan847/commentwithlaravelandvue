@@ -186,7 +186,6 @@ export default {
                 this.commentData = res.data;
                 this.commentsData = _.orderBy(res.data, ['votes'], ['desc']);
                 this.comments = 1;
-                console.log(this.commentData[0].replies[0]);
             });
             
         },
